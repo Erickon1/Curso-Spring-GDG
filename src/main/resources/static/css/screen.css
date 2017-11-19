@@ -1,0 +1,80 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 8, ../../sass/screen.scss */
+nav {
+  background-color: #8B008B;
+}
+
+/* line 12, ../../sass/screen.scss */
+#registroBtn {
+  background-color: #8B008B;
+}
+
+/* label color */
+/* line 17, ../../sass/screen.scss */
+.input-field label {
+  color: white;
+}
+
+/* label focus color */
+/* line 21, ../../sass/screen.scss */
+.input-field input[type=text]:focus + label {
+  color: white;
+}
+
+/* label underline focus color */
+/* line 25, ../../sass/screen.scss */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #8B008B;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+/* line 30, ../../sass/screen.scss */
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]) {
+  border-bottom: 1px solid #8B008B;
+  box-shadow: 0 1px 0 0 #000;
+}
+
+/* line 36, ../../sass/screen.scss */
+.input-field input[type=password]:focus + label {
+  color: white;
+}
+
+/* line 40, ../../sass/screen.scss */
+.input-field input[type=email]:focus + label {
+  color: white;
+}
+
+/* icon prefix focus color */
+/* line 45, ../../sass/screen.scss */
+.input-field .prefix.active {
+  color: white;
+}
+
+/* line 49, ../../sass/screen.scss */
+#formTem {
+  margin-top: 30px;
+}
+
+/*label on the input*/
+/* line 54, ../../sass/screen.scss */
+input[type=text], input[type=password], input[type=email] {
+  color: white;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+/* line 59, ../../sass/screen.scss */
+.input-field.col label {
+  position: initial;
+  float: right;
+  margin-top: 5px;
+}
+
+/* line 65, ../../sass/screen.scss */
+#liError {
+  color: red;
+  font-weight: bold;
+}
