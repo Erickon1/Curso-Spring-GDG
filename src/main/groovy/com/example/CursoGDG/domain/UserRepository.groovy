@@ -8,4 +8,10 @@ import org.springframework.data.repository.CrudRepository
 
 public interface UserRepository extends CrudRepository<User, Long> {
 
+	User findById(int id)
+	User findByEmail(String email)
+	User findByName(String name)
+	boolean existsByName(String name)
+	boolean existsByEmail(String email)
+
 }

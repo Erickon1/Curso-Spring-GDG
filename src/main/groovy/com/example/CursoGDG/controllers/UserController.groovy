@@ -47,6 +47,39 @@ class UserController extends WebMvcConfigurerAdapter {
         userService.createUser(name,email,password)
 
     }
+
+
+    @PostMapping(path="/add/{token}")  
+    ResponseEntity addNewUserToken (@RequestBody String email,@PathVariable("token") String token ) {
+    
+    @PostMapping(path="/add")
+    def addNewUser (@RequestBody String email) {
+        if (userService.emailValid(email)) {
+            if(!userService.existsByEmail(email)){
+                userService.createUser(email)
+            }else{
+                Map request = [
+                "timestamp":1424834682223,
+                "error":"Bad Request",
+                "status":400,
+                "path" : "/add",
+                "message":"El correo ya ha sido registrado."                ]
+                ResponseEntity.status(HttpStatus.BAD_REQUEST).body(request)
+                
+            }   
+        }else{
+            Map request = [
+            "timestamp":1424834682223,
+            "error":"Bad Request",
+            "status":400,
+            "path" : "/add",
+            "message":"El correo ya ha sido registrado."
+            ]
+            ResponseEntity.status(HttpStatus.BAD_REQUEST).body(request)
+            
+        }
+                  
+    }
     */
 
     

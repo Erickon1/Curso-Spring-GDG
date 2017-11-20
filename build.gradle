@@ -29,6 +29,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	//compile('org.springframework.boot:spring-boot-starter-security')
 	
+	//compile "commons-validator:commons-validator:1.4.1"
 	
   //compile("org.webjars:materializecss:0.96.0")
   //compile("org.webjars:jquery:2.1.4")
