@@ -29,9 +29,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	//compile('org.springframework.boot:spring-boot-starter-security')
 	
-	compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-  compile("org.springframework.boot:spring-boot-devtools")
-  testCompile("junit:junit")
+	
   //compile("org.webjars:materializecss:0.96.0")
   //compile("org.webjars:jquery:2.1.4")
   
