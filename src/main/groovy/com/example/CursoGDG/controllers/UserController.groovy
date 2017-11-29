@@ -18,6 +18,7 @@ import com.example.CursoGDG.services.UserService
 @RestController
 //@Controller
 @Configuration
+@RequestMapping("/api")
 class UserController extends WebMvcConfigurerAdapter {
 
     @Autowired
@@ -30,12 +31,51 @@ class UserController extends WebMvcConfigurerAdapter {
 
 
     @PostMapping(path="/add") 
-    @ResponseBody String addNewUser (@RequestBody Map json) {
+    @ResponseBody def addNewUser (@RequestBody Map json) {
         //"name: ${json.name}\n email: ${json.email}\n password: ${json.password}"
         userService.createUser(json.name,json.email,json.password)
 
     }
-    
+    @GetMapping(path="/all") 
+    @ResponseBody def getAllUsers () {
+        userService.getAllUsers()
+
+    }
+    @DeleteMapping(path="/delete/{id}") 
+    @ResponseBody def deleteUser (@PathVariable("id") Integer id) {
+        if(userService.existsById(id)){
+          userService.deleteUser(id)
+        }else{
+            Map request = [
+            "timestamp":1424834682223,
+            "error":"Bad Request",
+            "status":400,
+            "path" : "/delete",
+            "message":"El id del usuario no existe."
+            ]
+            ResponseEntity.status(HttpStatus.BAD_REQUEST).body(request)
+            
+        }
+
+
+    }
+    @PutMapping(path="/edit/{id}") 
+    @ResponseBody def editUser (@RequestBody Map json, @PathVariable("id") Integer id) {
+        if(userService.existsById(id)){
+            userService.editUser(id,json.name,json.email,json.password)
+        }else{
+            Map request = [
+            "timestamp":1424834682223,
+            "error":"Bad Request",
+            "status":400,
+            "path" : "/edit",
+            "message":"El id del usuario no existe."
+            ]
+            ResponseEntity.status(HttpStatus.BAD_REQUEST).body(request)
+            
+        }
+
+    }
     /*
     @PostMapping(path="/add") 
     @ResponseBody String addNewUser (
