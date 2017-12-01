@@ -22,5 +22,9 @@ build/
 nbbuild/
 dist/
 nbdist/
+<<<<<<< HEAD
 .nb-gradle/
 log/
+=======
+.nb-gradle/
+>>>>>>> 92aec0525a113e26460b723620a2c6d1ba0f8f99

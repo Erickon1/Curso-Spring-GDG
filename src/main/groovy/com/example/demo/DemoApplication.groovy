@@ -1,12 +1,12 @@
-package com.example.CursoGDG
+package com.example.demo
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
-class CursoGdgApplication {
+class DemoApplication {
 
 	static void main(String[] args) {
-		SpringApplication.run CursoGdgApplication, args
+		SpringApplication.run DemoApplication, args
 	}
 }
